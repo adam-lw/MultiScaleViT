@@ -1,0 +1,30 @@
+accumulationSize: '10'
+datasetDir: Datasets/RNSA
+earlyStopDelta: '0.005'
+earlyStopThreshold: '5'
+learningRate: '0.0001'
+learningRateScheduler: ''
+lossFunction:
+  name: torch.nn.CrossEntropyLoss
+  params: []
+maxEpochs: '30'
+model: ViT
+modelConfigDir: Config
+optimiser:
+  inst: 'False'
+  name: torch.optim.AdamW
+resultsDir: Results
+savePath: SavedModels
+test_transforms:
+- name: torchvision.transforms.Compose
+  params:
+  - name: torchvision.transforms.Resize.Resize
+    params:
+    - (224, 224)
+train_transforms:
+- name: torchvision.transforms.Compose
+  params:
+  - name: torchvision.transforms.Resize.Resize
+    params:
+    - (224, 224)
+useLearningRateScheduler: 'False'
